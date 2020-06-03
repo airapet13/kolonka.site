@@ -1,0 +1,141 @@
+@font-face {
+    font-family: "Harry";
+    src: url(10467.ttf)
+}
+body{
+    margin: 0;
+}
+.intro {
+    height: auto;
+    position: absolute;
+    left:0;
+    right:0;
+    top:0;
+    bottom:0;
+    z-index: 1
+
+}
+.test{
+    position: relative;
+    z-index: 2
+}
+
+.ras{
+    font-family: Harry;
+    font-size: 50pt;
+    top: 57%; /* Отступ в процентах от верхнего края окна */
+    left: 35%; /* Отступ в процентах от левого края окна */
+    width: 800px; /* Ширина блока */
+    height: 300px; /* Высота блока */
+    position: absolute; /* Абсолютное позиционирование блока */
+    margin-top: -225px; /* Отрицательный отступ от верхнего края страницы, должен равняться половине высоты блока со знаком минус */
+    margin-left: -225px; /
+
+}
+.but{
+    font-family: Harry;
+    font-size: 50pt;
+    background: none;
+    box-shadow: none;
+    border: none;
+}
+.but:focus{
+    outline: none !important;
+}
+.inp{
+    font-family: Harry;
+    font-size: 50pt;
+    background: none;
+    box-shadow: none;
+    border: none;
+    width: 400px;
+}
+.inp:focus{
+    outline: none !important;
+}
+.inp::-webkit-outer-spin-button,
+.inp::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+/*Создаём красивое горизонтальное меню*/
+.menu-main {
+    list-style: none;
+    margin: 10px 0 5px;
+    padding: 25px 0 5px;
+    text-align: center;
+    background: none;
+}
+
+.menu-main li {display: inline-block;}
+.menu-main li:after {
+    content: "|";
+    color: #606060;
+    display: inline-block;
+    vertical-align:top;
+}
+.menu-main li:last-child:after {content: none;}
+.menu-main a {
+    text-decoration: none;
+    font-family: Harry;;
+    letter-spacing: 2px;
+    font-weight: bold;
+    position: relative;
+    padding-bottom: 20px;
+    margin: 0 34px 0 30px;
+    font-size: 24px;
+    text-transform: uppercase;
+    display: inline-block;
+    transition: color .2s;
+}
+.menu-main a, .menu-main a:visited {color: #000000;}
+.menu-main a.current, .menu-main a:hover{color: #231a24	;}
+.menu-main a:before,
+.menu-main a:after {
+
+    content: "";
+    position: absolute;
+    height: 4px;
+    top: auto;
+    right: 50%;
+    bottom: -5px;
+    left: 50%;
+    background: #302112	;
+    transition: 1s;
+}
+.menu-main a:hover:before, .menu-main .current:before {left: 0;}
+.menu-main a:hover:after, .menu-main .current:after {right: 0;}
+@media (max-width: 550px) {
+    .menu-main {padding-top: 0;}
+    .menu-main li {display: block;}
+    .menu-main li:after {content: none;}
+    .menu-main a {
+        padding: 25px 0 20px;
+        margin: 0 30px;
+    }
+}
+
+/*Создаём эффект пульсации для кнопки*/
+.but, .vjuh{
+    animation-name: pulse;
+    transform-origin: center center;
+    animation-iteration-count: infinite;
+    animation-duration: 3s;
+}
+@keyframes pulse {
+    0% {
+        -webkit-transform: scale(1);
+        -ms-transform: scale(1);
+        transform: scale(1);
+    }
+    50% {
+        -webkit-transform: scale(1.02);
+        -ms-transform: scale(1.02);
+        transform: scale(1.02);
+    }
+    100% {
+        -webkit-transform: scale(1);
+        -ms-transform: scale(1);
+        transform: scale(1);
+    }
+}
